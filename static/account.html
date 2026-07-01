@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NombaFlow | Account Details</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A1628',
+            'navy-light': '#122040',
+            green: '#00C853',
+            'green-dark': '#009624',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+  </style>
+</head>
+<body class="bg-gray-50 text-navy antialiased min-h-screen">
+
+  <!-- SIDEBAR -->
+
+  <aside class="fixed left-0 top-0 h-full w-64 bg-navy z-50 hidden md:flex flex-col py-6">
+    <div class="px-5 mb-8">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 bg-navy-light rounded-lg flex items-center justify-center">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M2 8h20M6 4h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2z" stroke="#00C853" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 12h4M12 16h4M8 12h.01M8 16h.01" stroke="#00C853" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-base font-extrabold text-white leading-none">Nomba<span class="text-green">Flow</span></h1>
+          <p class="text-[11px] text-white/40 mt-0.5">Merchant Portal</p>
+        </div>
+      </div>
+    </div>
+    <nav class="flex-1 px-3 space-y-1">
+      <a href="dashboard.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+        Dashboard
+      </a>
+      <a href="transactions.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+        </svg>
+        Transactions
+      </a>
+      <a href="account.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/10 border-l-2 border-green transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>
+        </svg>
+        Account Details
+      </a>
+      <a href="settings.html" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-sm font-medium text-white/50 hover:text-white hover:bg-white/5 transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+        </svg>
+        Settings
+      </a>
+    </nav>
+    <div class="px-5 mt-auto pt-6 border-t border-white/10">
+      <div class="flex items-center gap-3">
+        <div id="sidebarAvatar" class="w-9 h-9 rounded-full bg-green flex items-center justify-center text-navy text-sm font-extrabold shrink-0">M</div>
+        <div class="overflow-hidden">
+          <p id="sidebarName" class="text-white text-sm font-bold truncate">Merchant</p>
+          <p class="text-white/40 text-xs">Standard Merchant</p>
+        </div>
+        <button id="logoutBtn" title="Logout" class="ml-auto text-white/30 hover:text-red-400 transition-colors shrink-0">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- HEADER -->
+
+  <header class="fixed top-0 right-0 left-0 md:left-64 h-16 bg-white border-b border-gray-200 z-40 flex items-center justify-between px-6">
+    <div class="md:hidden text-base font-extrabold text-navy">Nomba<span class="text-green">Flow</span></div>
+    <div class="hidden sm:block text-base font-bold text-navy">Account Details</div>
+    <div class="flex items-center gap-3">
+      <div id="headerAvatar" class="w-8 h-8 rounded-full bg-green flex items-center justify-center text-navy text-xs font-extrabold">M</div>
+      <span id="headerName" class="hidden lg:block text-sm font-semibold text-navy">Merchant</span>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="md:ml-64 pt-16 min-h-screen p-6 pb-24 md:pb-6">
+    <div class="max-w-5xl mx-auto space-y-6">
+
+  <!-- Page Title -->
+  <div>
+    <h2 class="text-2xl font-extrabold text-navy tracking-tight">Account Details</h2>
+    <p class="text-sm text-gray-500 mt-0.5">Your dedicated virtual business account information.</p>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+    <!-- LEFT: Main Account Card -->
+    <div class="lg:col-span-2 space-y-5">
+
+      <!-- Virtual Account Card -->
+      <div class="relative overflow-hidden bg-navy rounded-2xl p-6 text-white shadow-xl">
+        <div class="absolute -right-16 -top-16 w-56 h-56 bg-green/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-16 -bottom-16 w-44 h-44 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
+
+        <div class="relative z-10 flex justify-between items-start mb-6 pb-5 border-b border-white/10">
+          <div>
+            <p class="text-[11px] font-bold tracking-widest uppercase text-white/40 mb-1">Settlement Bank</p>
+            <h3 id="bankName" class="text-lg font-extrabold text-white">Nombank MFB</h3>
+          </div>
+          <span class="flex items-center gap-1.5 bg-green/10 border border-green/20 text-green text-[11px] font-bold px-3 py-1 rounded-full">
+            <svg class="w-3 h-3" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg>
+            Verified
+          </span>
+        </div>
+
+        <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <!-- Account Number -->
+          <div>
+            <p class="text-[10px] font-bold tracking-widest uppercase text-white/30 mb-2">Account Number</p>
+            <div class="flex items-center gap-3">
+              <span id="accountNumber" class="mono text-2xl font-extrabold text-green tracking-wider">— — — —</span>
+              <button id="copyBtn" class="flex items-center gap-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-all shrink-0">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                  <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+                </svg>
+                Copy
+              </button>
+            </div>
+          </div>
+          <!-- Account Name -->
+          <div>
+            <p class="text-[10px] font-bold tracking-widest uppercase text-white/30 mb-2">Account Name</p>
+            <p id="accountName" class="text-base font-extrabold text-white uppercase tracking-wide">—</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Business Info -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+        <h4 class="text-sm font-bold text-navy mb-4">Business Information</h4>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1">Business Name</p>
+            <p id="businessName" class="text-sm font-semibold text-navy">—</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1">Owner Name</p>
+            <p id="ownerName" class="text-sm font-semibold text-navy">—</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1">Email Address</p>
+            <p id="emailAddr" class="text-sm font-semibold text-navy">—</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-1">Account Status</p>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold text-green bg-green/10 px-2.5 py-0.5 rounded-full">
+              <span class="w-1.5 h-1.5 rounded-full bg-green animate-pulse"></span> Active
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Info Notice -->
+      <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 flex gap-3">
+        <svg class="w-5 h-5 text-blue-400 shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+        </svg>
+        <div>
+          <p class="text-sm font-bold text-navy mb-1">Important</p>
+          <p class="text-xs text-gray-500 leading-relaxed">This virtual account is for business payments only. All deposits are tracked automatically. Ensure customers reference your business name when sending payments for faster reconciliation.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Actions -->
+    <div class="space-y-5">
+
+      <!-- Quick Actions -->
+      <div class="bg-navy rounded-2xl p-5 text-white">
+        <h4 class="text-sm font-bold text-white mb-4">Quick Actions</h4>
+        <div class="space-y-2">
+          <button id="shareBtn" class="w-full bg-white/10 hover:bg-white/20 transition-all py-3 px-4 rounded-xl flex items-center justify-between group text-sm font-medium">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <path d="M8.59 13.51l6.83 3.98M15.41 6.51l-6.82 3.98"/>
+              </svg>
+              Share Account Info
+            </span>
+            <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <button id="downloadBtn" class="w-full bg-white/10 hover:bg-white/20 transition-all py-3 px-4 rounded-xl flex items-center justify-between group text-sm font-medium">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+              Download Account Info
+            </span>
+            <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+
+          <a href="settings.html" class="w-full bg-white/10 hover:bg-white/20 transition-all py-3 px-4 rounded-xl flex items-center justify-between group text-sm font-medium">
+            <span class="flex items-center gap-2.5">
+              <svg class="w-4 h-4 text-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/>
+              </svg>
+              Update Details
+            </span>
+            <svg class="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Copy toast feedback -->
+      <div id="copyToast" class="hidden bg-navy text-white text-xs font-semibold px-4 py-2.5 rounded-xl text-center shadow-lg">
+        ✓ Account number copied!
+      </div>
+
+      <!-- Account Ref -->
+      <div class="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm">
+        <p class="text-[11px] font-bold uppercase tracking-wider text-gray-400 mb-3">Account Reference</p>
+        <p id="accountRef" class="mono text-xs text-navy break-all">—</p>
+        <p class="text-xs text-gray-400 mt-2">Use this reference when contacting support.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </main>
+
+  <!-- MOBILE BOTTOM NAV -->
+
+  <div class="fixed bottom-0 left-0 w-full bg-white border-t border-gray-200 flex md:hidden justify-around py-2 z-50">
+    <a href="dashboard.html" class="flex flex-col items-center text-gray-400">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+      <span class="text-[10px] mt-0.5">Home</span>
+    </a>
+    <a href="transactions.html" class="flex flex-col items-center text-gray-400">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/>
+      </svg>
+      <span class="text-[10px] mt-0.5">History</span>
+    </a>
+    <a href="account.html" class="flex flex-col items-center text-green">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/>
+      </svg>
+      <span class="text-[10px] font-bold mt-0.5">Account</span>
+    </a>
+    <a href="settings.html" class="flex flex-col items-center text-gray-400">
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+      </svg>
+      <span class="text-[10px] mt-0.5">Settings</span>
+    </a>
+  </div>
+
+  <script src="js/account.js"></script>
+
+</body>
+</html>

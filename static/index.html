@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NombaFlow | Your Business Deserves Its Own Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0A1628',
+            'navy-light': '#122040',
+            'navy-footer': '#060e1a',
+            green: '#00C853',
+            'green-dark': '#009624',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .preview-number { font-family: 'Courier New', monospace; }
+  </style>
+</head>
+<body class="bg-white text-navy antialiased">
+
+  <!-- NAV -->
+
+  <nav id="navbar" class="fixed top-0 w-full z-50 bg-navy px-10 py-4 flex justify-between items-center transition-shadow duration-300">
+    <div class="text-xl font-extrabold text-white tracking-tight">
+      Nomba<span class="text-green">Flow</span>
+    </div>
+    <ul class="hidden md:flex items-center gap-8 list-none">
+      <li><a href="#features" class="text-white/60 hover:text-green text-sm font-medium transition-colors">Features</a></li>
+      <li><a href="#how-it-works" class="text-white/60 hover:text-green text-sm font-medium transition-colors">How it works</a></li>
+    </ul>
+    <div class="flex items-center gap-3">
+      <a href="login.html" class="text-white/70 hover:text-white hover:bg-white/10 text-sm font-medium px-4 py-2 rounded-lg transition-all">Login</a>
+      <a href="register.html" class="bg-green text-navy text-sm font-bold px-6 py-2.5 rounded-lg hover:bg-emerald-400 active:scale-95 transition-all">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="bg-navy min-h-screen flex flex-col justify-center items-center text-center px-6 pt-28 pb-20">
+    <span class="inline-block bg-green/10 border border-green/30 text-green text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-7">
+      Built on Nomba API · For Nigerian Businesses
+    </span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight max-w-3xl mb-6">
+      Your Business Deserves <br class="hidden md:block">
+      <span class="text-green">Its Own Account</span>
+    </h1>
+    <p class="text-lg text-white/50 max-w-xl mb-10 leading-relaxed">
+      Get a dedicated payment account number for your business and track every payment automatically. No more sharing personal accounts.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 mb-16">
+      <a href="register.html" class="bg-green text-navy font-bold px-8 py-4 rounded-xl text-base hover:bg-emerald-400 active:scale-95 transition-all shadow-lg shadow-green/20">
+        Get Started Free
+      </a>
+      <a href="login.html" class="border-2 border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base hover:border-white hover:bg-white/5 transition-all">
+        Login
+      </a>
+    </div>
+
+```
+<!-- Dashboard Preview -->
+<div class="w-full max-w-4xl bg-navy-light border border-white/10 rounded-2xl overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.4)]">
+  <!-- Topbar -->
+  <div class="bg-white/5 border-b border-white/[0.07] px-5 py-3 flex items-center gap-2">
+    <div class="w-2.5 h-2.5 rounded-full bg-[#ff5f57]"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+    <div class="w-2.5 h-2.5 rounded-full bg-[#28c840]"></div>
+  </div>
+  <!-- Body -->
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="w-44 bg-black/20 border-r border-white/[0.07] py-5 shrink-0">
+      <div class="px-5 py-2.5 text-xs text-green flex items-center gap-2 bg-green/10 border-r-2 border-green font-medium">
+        <div class="w-1.5 h-1.5 rounded-full bg-green"></div> Dashboard
+      </div>
+      <div class="px-5 py-2.5 text-xs text-white/30 flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-current"></div> Transactions
+      </div>
+      <div class="px-5 py-2.5 text-xs text-white/30 flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-current"></div> Account Details
+      </div>
+      <div class="px-5 py-2.5 text-xs text-white/30 flex items-center gap-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-current"></div> Settings
+      </div>
+    </div>
+    <!-- Main -->
+    <div class="flex-1 p-5">
+      <!-- Account Card -->
+      <div class="bg-gradient-to-br from-green to-green-dark rounded-xl p-4 mb-4">
+        <div class="text-[10px] font-bold tracking-widest uppercase text-black/50 mb-1">Your Dedicated Account</div>
+        <div class="preview-number text-lg font-extrabold text-navy tracking-wider">9171 4245 34</div>
+        <div class="text-[11px] text-black/40 mt-1">Nombank MFB · Ada's Catering Services</div>
+      </div>
+      <!-- Table Header -->
+      <div class="grid grid-cols-4 px-2 pb-1 border-b border-white/[0.07] mb-1">
+        <span class="text-[9px] font-bold tracking-widest uppercase text-white/30">Sender</span>
+        <span class="text-[9px] font-bold tracking-widest uppercase text-white/30">Amount</span>
+        <span class="text-[9px] font-bold tracking-widest uppercase text-white/30">Date</span>
+        <span class="text-[9px] font-bold tracking-widest uppercase text-white/30">Status</span>
+      </div>
+      <!-- Rows -->
+      <div class="grid grid-cols-4 px-2 py-2 rounded-lg hover:bg-white/[0.03] transition-colors">
+        <span class="text-[11px] text-white/70">Chidi Okafor</span>
+        <span class="text-[11px] text-white/70">₦5,000</span>
+        <span class="text-[11px] text-white/70">Jun 25</span>
+        <span><span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-green/15 text-green">Paid</span></span>
+      </div>
+      <div class="grid grid-cols-4 px-2 py-2 rounded-lg hover:bg-white/[0.03] transition-colors">
+        <span class="text-[11px] text-white/70">Amaka Eze</span>
+        <span class="text-[11px] text-white/70">₦12,000</span>
+        <span class="text-[11px] text-white/70">Jun 24</span>
+        <span><span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-green/15 text-green">Paid</span></span>
+      </div>
+      <div class="grid grid-cols-4 px-2 py-2 rounded-lg hover:bg-white/[0.03] transition-colors">
+        <span class="text-[11px] text-white/70">Emeka Nwosu</span>
+        <span class="text-[11px] text-white/70">₦3,500</span>
+        <span class="text-[11px] text-white/70">Jun 24</span>
+        <span><span class="text-[9px] font-bold px-2 py-0.5 rounded-full bg-yellow-400/15 text-yellow-400">Pending</span></span>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="bg-gray-50 py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <p class="text-xs font-bold tracking-widest uppercase text-green-dark mb-3">What you get</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-navy tracking-tight mb-4">
+        Everything a small business needs<br>to get paid properly
+      </h2>
+      <p class="text-base text-gray-500 max-w-md mb-14 leading-relaxed">
+        No more mixing personal and business money. No more manual tracking. Just payments, recorded automatically.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:border-green hover:shadow-[0_8px_32px_rgba(0,200,83,0.1)] hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 bg-green/10 rounded-xl flex items-center justify-center text-2xl mb-5">🏦</div>
+          <h3 class="text-base font-bold text-navy mb-2">Dedicated Account Number</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">A permanent bank account number tied only to your business. Share it with every customer — it never changes.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:border-green hover:shadow-[0_8px_32px_rgba(0,200,83,0.1)] hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 bg-green/10 rounded-xl flex items-center justify-center text-2xl mb-5">⚡</div>
+          <h3 class="text-base font-bold text-navy mb-2">Automatic Payment Tracking</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Every payment recorded instantly the moment it arrives — who paid, how much, and when. Zero manual entry.</p>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:border-green hover:shadow-[0_8px_32px_rgba(0,200,83,0.1)] hover:-translate-y-1 transition-all duration-300">
+          <div class="w-12 h-12 bg-green/10 rounded-xl flex items-center justify-center text-2xl mb-5">📊</div>
+          <h3 class="text-base font-bold text-navy mb-2">Real-Time Dashboard</h3>
+          <p class="text-sm text-gray-500 leading-relaxed">Log in anytime and see your full payment history at a glance. Clean, simple, and always up to date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how-it-works" class="bg-white py-24 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+      <p class="text-xs font-bold tracking-widest uppercase text-green-dark mb-3">How it works</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-navy tracking-tight mb-14">Up and running in minutes</h2>
+      <div class="relative flex flex-col md:flex-row justify-between gap-10 md:gap-0">
+        <div class="hidden md:block absolute top-6 left-[15%] right-[15%] h-0.5 bg-gray-200"></div>
+        <div class="flex-1 flex flex-col items-center gap-4 relative z-10 px-4">
+          <div class="w-12 h-12 rounded-full bg-green text-navy flex items-center justify-center text-base font-extrabold ring-4 ring-white shadow-[0_0_0_2px_#00C853]">1</div>
+          <h4 class="text-sm font-bold text-navy">Register your business</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Enter your business name, email, and password to create your account.</p>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-4 relative z-10 px-4">
+          <div class="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center text-base font-extrabold ring-4 ring-white ring-offset-0 shadow-[0_0_0_2px_#e5e7eb]">2</div>
+          <h4 class="text-sm font-bold text-navy">Get your account number</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">NombaFlow instantly creates a dedicated virtual account for your business.</p>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-4 relative z-10 px-4">
+          <div class="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center text-base font-extrabold ring-4 ring-white shadow-[0_0_0_2px_#e5e7eb]">3</div>
+          <h4 class="text-sm font-bold text-navy">Share with customers</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Give your account number to customers. They pay via any Nigerian bank.</p>
+        </div>
+        <div class="flex-1 flex flex-col items-center gap-4 relative z-10 px-4">
+          <div class="w-12 h-12 rounded-full bg-navy text-white flex items-center justify-center text-base font-extrabold ring-4 ring-white shadow-[0_0_0_2px_#e5e7eb]">4</div>
+          <h4 class="text-sm font-bold text-navy">Track every payment</h4>
+          <p class="text-xs text-gray-500 leading-relaxed">Every payment appears on your dashboard automatically in real time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+
+  <section class="bg-navy py-24 px-6 text-center">
+    <h2 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight mb-4">
+      Ready to get your business<br><span class="text-green">its own account?</span>
+    </h2>
+    <p class="text-base text-white/40 mb-10">Join Nigerian businesses already getting paid the right way.</p>
+    <a href="register.html" class="inline-block bg-green text-navy font-bold px-10 py-4 rounded-xl text-base hover:bg-emerald-400 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,200,83,0.3)] active:scale-95 transition-all">
+      Create Your Account
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#060e1a] px-10 py-8 flex flex-col md:flex-row justify-between items-center gap-4 flex-wrap">
+    <div class="text-lg font-extrabold text-white">Nomba<span class="text-green">Flow</span></div>
+    <p class="text-xs text-white/30">© 2026 NombaFlow. Built for the Nomba x DevCareer Hackathon.</p>
+    <div class="flex gap-6">
+      <a href="#" class="text-xs text-white/40 hover:text-green transition-colors">Privacy</a>
+      <a href="#" class="text-xs text-white/40 hover:text-green transition-colors">Terms</a>
+      <a href="#" class="text-xs text-white/40 hover:text-green transition-colors">Contact</a>
+    </div>
+  </footer>
+
+  <script src="js/landing.js"></script>
+
+</body>
+</html>
