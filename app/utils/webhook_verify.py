@@ -2,7 +2,7 @@ import hmac
 import hashlib
 import os
 
-NOMBA_CLIENT_SECRET = os.getenv('NOMBA_CLIENT_SECRET')
+WEBHOOK_SECRET = os.getenv('NOMBA_WEBHOOK_SECRET', 'NombaHackathon2026')
 
 def verify_signature(request, signature):
     if not signature:
@@ -10,7 +10,7 @@ def verify_signature(request, signature):
     try:
         payload = request.get_data(as_text=True)
         computed = hmac.new(
-            NOMBA_CLIENT_SECRET.encode('utf-8'),
+            WEBHOOK_SECRET.encode('utf-8'),
             payload.encode('utf-8'),
             hashlib.sha256
         ).hexdigest()
