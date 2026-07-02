@@ -2,7 +2,7 @@ const API_BASE = '/api';
 
 // Redirect to login if no token
 const token = localStorage.getItem('token');
-//if (!token) window.location.href = 'login.html';
+if (!token) window.location.href = 'login.html';
 
 // Format currency
 function formatNaira(amount) {

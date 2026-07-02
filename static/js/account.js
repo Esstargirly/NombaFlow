@@ -1,6 +1,6 @@
 const API_BASE = '/api';
 const token = localStorage.getItem('token');
-//if (!token) window.location.href = 'login.html';
+if (!token) window.location.href = 'login.html';
 
 function getInitials(name) {
 return (name || 'M').split(' ').map(n => n[0]).join('').toUpperCase().slice(0, 2);

@@ -1,6 +1,6 @@
 const API_BASE = '/api';
 const token = localStorage.getItem('token');
-//if (!token) window.location.href = 'login.html';
+if (!token) window.location.href = 'login.html';
 
 const PER_PAGE = 10;
 let allTransactions = [];
