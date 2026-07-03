@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory
+from flask import Flask, send_from_directory, jsonify
 from app.extensions import db, bcrypt, jwt, cors
 from dotenv import load_dotenv
 import os
@@ -6,11 +6,16 @@ import os
 load_dotenv()
 
 def create_app():
-    app = Flask(__name__, static_folder='../static')
+    app = Flask(__name__, static_folder=os.path.join(os.path.dirname(__file__), '..', 'static'))
+
 
     # Config
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv('DATABASE_URL')
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
+        'pool_pre_ping': True,
+        'pool_recycle': 300,
+    }
     app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
 
     # Initialize extensions
@@ -30,14 +35,19 @@ def create_app():
     app.register_blueprint(transactions_bp, url_prefix='/api')
     app.register_blueprint(webhook_bp, url_prefix='/webhook')
 
+    # Health check
+    @app.route('/health')
+    def health():
+        return jsonify({'status': 'ok'}), 200
+
     # Serve frontend
     @app.route('/')
     def index():
-        return send_from_directory('../static', 'index.html')
+        return send_from_directory(app.static_folder, 'index.html')
 
     @app.route('/<path:filename>')
     def serve_static(filename):
-        return send_from_directory('../static', filename)
+        return send_from_directory(app.static_folder, filename)
 
     # Create tables
     with app.app_context():
