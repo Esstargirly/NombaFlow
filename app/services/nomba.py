@@ -29,8 +29,10 @@ def get_access_token():
 
 def create_virtual_account(token, account_ref, account_name):
     try:
+        sub_account_id = os.getenv('NOMBA_SUB_ACCOUNT_ID')
+        
         response = requests.post(
-            f"{NOMBA_BASE_URL}/v1/accounts/virtual",
+            f"{NOMBA_BASE_URL}/v1/accounts/virtual/{sub_account_id}",
             json={
                 "accountRef": account_ref,
                 "accountName": account_name,
@@ -49,3 +51,4 @@ def create_virtual_account(token, account_ref, account_name):
     except Exception as e:
         print(f"Error creating virtual account: {e}")
         return None
+
