@@ -9,18 +9,20 @@ def nomba_webhook():
     payload = request.get_json()
     print(f"Webhook received: {payload}")
 
-    event = payload.get('event')
+    event_type = payload.get('event_type')
     data = payload.get('data', {})
+    transaction_data = data.get('transaction', {})
+    customer_data = data.get('customer', {})
 
-    if event == 'payment_success' and data.get('type') == 'vact_transfer':
-        account_ref = data.get('aliasAccountReference')
+    if event_type == 'payment_success' and transaction_data.get('type') == 'vact_transfer':
+        account_ref = transaction_data.get('aliasAccountReference')
         virtual_account = VirtualAccount.query.filter_by(account_ref=account_ref).first()
 
         if not virtual_account:
             print(f"Virtual account not found for ref: {account_ref}")
             return jsonify({'message': 'Virtual account not found'}), 404
 
-        reference = data.get('transactionId') or data.get('requestId')
+        reference = transaction_data.get('transactionId') or payload.get('requestId')
         existing = Transaction.query.filter_by(reference=reference).first()
         if existing:
             return jsonify({'message': 'Transaction already recorded'}), 200
@@ -28,11 +30,11 @@ def nomba_webhook():
         transaction = Transaction(
             merchant_id=virtual_account.merchant_id,
             virtual_account_id=virtual_account.id,
-            sender_name=data.get('senderName'),
-            sender_bank=data.get('senderBank'),
-            amount=data.get('amount', 0),
+            sender_name=customer_data.get('senderName'),
+            sender_bank=customer_data.get('bankName'),
+            amount=transaction_data.get('transactionAmount', 0),
             reference=reference,
-            narration=data.get('narration'),
+            narration=transaction_data.get('narration'),
             status='paid'
         )
         db.session.add(transaction)
