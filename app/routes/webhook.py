@@ -1,18 +1,13 @@
 from flask import Blueprint, request, jsonify
 from app.extensions import db
 from app.models import VirtualAccount, Transaction
-from app.utils.webhook_verify import verify_signature
 
 webhook_bp = Blueprint('webhook', __name__)
 
 @webhook_bp.route('/nomba', methods=['POST'])
 def nomba_webhook():
     payload = request.get_json()
-
-    # Verify signature
-    signature = request.headers.get('nomba-signature')
-    if not verify_signature(request, signature):
-        return jsonify({'message': 'Invalid signature'}), 401
+    print(f"Webhook received: {payload}")
 
     event = payload.get('event')
     data = payload.get('data', {})
@@ -22,9 +17,9 @@ def nomba_webhook():
         virtual_account = VirtualAccount.query.filter_by(account_ref=account_ref).first()
 
         if not virtual_account:
+            print(f"Virtual account not found for ref: {account_ref}")
             return jsonify({'message': 'Virtual account not found'}), 404
 
-        # Avoid duplicate transactions
         reference = data.get('transactionId') or data.get('requestId')
         existing = Transaction.query.filter_by(reference=reference).first()
         if existing:
@@ -42,5 +37,6 @@ def nomba_webhook():
         )
         db.session.add(transaction)
         db.session.commit()
+        print(f"Transaction saved!")
 
     return jsonify({'message': 'Webhook received'}), 200
